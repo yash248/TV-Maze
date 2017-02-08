@@ -1,0 +1,16 @@
+<div class="jumbotron text-left">
+	<h2>Search for your favorite TV show</h2>
+
+	<form>
+		<div class="form-group">
+			<input type="text" class="form-control" uib-typeahead="getJsonArray.description for getJsonArray in getJsonArrays | filter:$viewValue | limitTo:8" ng-model="name">
+		</div>
+			
+		<div class="form-group">
+			<div>
+				<button type="button" class="btn btn-primary" ng-click="getSearch()">Search</button>
+			</div>
+		</div>
+	</form>
+	<searchdirective></searchdirective>
+</div>

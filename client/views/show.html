@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="col-xs-12">
+		<div class="panel">
+			<div class="row">
+				<div class="col-md-3">
+					<h3>{{showdata.name}}</h3>
+					<h5>{{showdata.genres.join(' | ')}}</h5>
+					<img ng-src="{{showdata.image.medium}}" alt="Description" />
+				</div>
+				<div class='col-md-8'>
+					<h3>Summary</h3>
+					<hr/>
+					<p ng-bind-html = "showdata.summary | trustHTML"></p>
+					<h3>Cast</h3>
+					<hr/>
+					<table>
+						<tr ng-repeat='cast in showdata._embedded.cast'>
+							<td>
+								<img ng-src="{{cast.character.image.medium == null ? '../views/default-icon.png' : cast.character.image.medium}}" style="float:left;" hight="50px" width="40px" alt="Description" />
+								<br/><br/>
+								<br/>
+							</td>
+							<td valign="middle">
+								<p>{{cast.person.name}} ... {{cast.character.name}}</p>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
